@@ -13,11 +13,11 @@ fi
 filePath=$1
 
 
-# Get the filename of the script
-fileName=$(basename $filePath)
+# Remove the file extension and create command name
+command=$(basename -s .sh $filePath)
 
 
-echo "Making $fileName executable"
+echo "Making command called $command"
 
 
 # Check if the script already exists in bin and notify user 
@@ -28,11 +28,11 @@ fi
 
 
 # Copy the script into bin dir on user's path
-cp $filePath $HOME/bin/$fileName
+cp $filePath $HOME/bin/$command
 
 
 # Make the script executable
-chmod +x $HOME/bin/$fileName
+chmod +x $HOME/bin/$command
 
 
 if [ -x $HOME/bin/$fileName ]
