@@ -4,7 +4,7 @@
 # Check if a file has been entered
 if [ -z $1 ]
 then 
-	echo "Misssing filepath"
+	echo "Missing filepath"
 	exit 1
 fi
 
