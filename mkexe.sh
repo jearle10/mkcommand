@@ -42,7 +42,7 @@ fi
 
 # Create an alias for the command so it doesnt need to be sourced
 
-  # Add bin directory to path (bash)
+  # Add command alias (bash)
   if [ -f ~/.bashrc ]
   then
     echo "alias $command='source $command'" >> ~/.bashrc
@@ -51,7 +51,7 @@ fi
 	echo "alias $command='source $command'" >> ~/.bashrc
   fi
 
-  # Add bin directory to path (zsh)
+  # Add command alias (zsh)
   if [ -f ~/.zshrc ]
   then
      echo "alias $command='source $command'" >> ~/.zshrc
