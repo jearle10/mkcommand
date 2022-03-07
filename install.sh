@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Check to see if mkexe has been installed and if not cp to user's bin directory
-if [ -e $HOME/bin/mkexe ]
+# Check to see if command has been installed and if not cp to user's bin directory
+if [ -e $HOME/bin/command ]
 then
-	echo "mkexe is already installed"
+	echo "command is already installed"
 else
   mkdir -p $HOME/bin
 
@@ -23,8 +23,8 @@ else
     touch ~/.zshrc
   fi
 
- 	cp ./mkexe.sh $HOME/bin/mkexe
-	chmod +x $HOME/bin/mkexe
+ 	cp ./command.sh $HOME/bin/command
+	chmod +x $HOME/bin/command
 fi
 
 
