@@ -40,4 +40,23 @@ then
 	printf "\nFile is executable\n"
 fi
 
+# Create an alias for the command so it doesnt need to be sourced
+
+  # Add bin directory to path (bash)
+  if [ -f ~/.bashrc ]
+  then
+    echo "alias $command='source $command'" >> ~/.bashrc
+  else
+    touch ~/.bashrc
+	echo "alias $command='source $command'" >> ~/.bashrc
+  fi
+
+  # Add bin directory to path (zsh)
+  if [ -f ~/.zshrc ]
+  then
+     echo "alias $command='source $command'" >> ~/.zshrc
+  else
+    touch ~/.zshrc
+	echo "alias $command='source $command'">> ~/.zshrc
+  fi
 
