@@ -26,7 +26,7 @@ function install (){
 
   # Move command into bin directory
     echo "Downloading src files from github"
-    curl -s https://raw.githubusercontent.com/jearle10/command/main/command.sh > $HOME/bin/mkcommand
+    curl -s https://raw.githubusercontent.com/jearle10/command/main/src/command.sh > $HOME/bin/mkcommand
   	chmod +x $HOME/bin/mkcommand
   fi
 
