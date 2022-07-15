@@ -14,8 +14,7 @@ filePath=$1
 
 
 # Remove the file extension and create command name
-command=$(basename -s .sh $filePath)
-
+command=$(basename -s .sh $filePath | basename -s .py $filepath | basename -s .js $filepath)
 
 echo "Making command called $command"
 
@@ -40,23 +39,29 @@ then
 	printf "\nFile is executable\n"
 fi
 
-# Create an alias for the command so it doesnt need to be sourced
+if [[ "$command"=="*.sh" ]] then;
+  echo "Creating alias for $command"
+  create_alias $command
 
+
+# Create an alias for the command so it doesnt need to be sourced
+function create_alias () {
   # Add command alias (bash)
   if [ -f ~/.bashrc ]
   then
-    echo "alias $command='source $command'" >> ~/.bashrc
+    echo "alias $1='source $1'" >> ~/.bashrc
   else
     touch ~/.bashrc
-	echo "alias $command='source $command'" >> ~/.bashrc
+	echo "alias $1='source $1'" >> ~/.bashrc
   fi
 
   # Add command alias (zsh)
   if [ -f ~/.zshrc ]
   then
-     echo "alias $command='source $command'" >> ~/.zshrc
+     echo "alias $1='source $1" >> ~/.zshrc
   else
     touch ~/.zshrc
-	echo "alias $command='source $command'">> ~/.zshrc
+	echo "alias $1='source $1'">> ~/.zshrc
   fi
 
+}
