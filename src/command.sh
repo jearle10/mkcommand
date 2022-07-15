@@ -42,7 +42,7 @@ fi
 if [[ "$command"=="*.sh" ]] then;
   echo "Creating alias for $command"
   create_alias $command
-
+fi
 
 # Create an alias for the command so it doesnt need to be sourced
 function create_alias () {
