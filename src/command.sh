@@ -39,7 +39,7 @@ then
 	printf "\nFile is executable\n"
 fi
 
-if [[ "$command"=="*.sh" ]] then;
+if [[ "$command"=="*.sh" ]]; then
   echo "Creating alias for $command"
   create_alias $command
 fi
